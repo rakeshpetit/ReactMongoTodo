@@ -1,4 +1,5 @@
 import Post from './models/post';
+import Todo from './models/todo';
 
 export default function () {
   Post.count().exec((err, count) => {
@@ -38,6 +39,21 @@ export default function () {
     const post2 = new Post({ name: 'Admin', title: 'Lorem Ipsum', slug: 'lorem-ipsum', cuid: 'cikqgkv4q01ck7453ualdn3hf', content: content2 });
 
     Post.create([post1, post2], (error) => {
+      if (!error) {
+        // console.log('ready to go....');
+      }
+    });
+  });
+
+  Todo.count().exec((err, count) => {
+    if (count > 0) {
+      return;
+    }
+
+    const todo1 = new Post({ name: 'Item 1', completed: 'false', id: 'cikqgkv4q01ck7453ualdn3hd' });
+    const todo2 = new Post({ name: 'Item 2', completed: 'false', id: 'cikqgkv4q01ck7453ualdn3hf' });
+
+    Todo.create([todo1, todo2], (error) => {
       if (!error) {
         // console.log('ready to go....');
       }

@@ -28,6 +28,21 @@ export function Header(props, context) {
             : null
         }
       </div>
+      <div>
+        <Link to={'/todo'} >
+          Todo
+        </Link>
+      </div>
+      <div>
+        <Link to={'/toggle'} >
+          Toggle
+        </Link>
+      </div>
+      <div>
+        <Link to={'/step'} >
+          Step Indicator
+        </Link>
+      </div>
     </div>
   );
 }
